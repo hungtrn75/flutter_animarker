@@ -39,6 +39,39 @@ class AnimarkerControllerDescription {
     this.rippleIdleAfter = const Duration(seconds: 30),
   });
 
+  AnimarkerControllerDescription copyWith({
+    final RippleListener? onRippleAnimation,
+    final MarkerListener? onMarkerAnimation,
+    final OnStopover? onStopover,
+    final TickerProvider? vsync,
+    final bool? useRotation,
+    final double? angleThreshold,
+    final int? runExpressAfter,
+    final bool? isActiveTrip,
+    final Color? rippleColor,
+    final double? rippleRadius,
+    final Curve? curve,
+    final Duration? duration,
+    final Duration? rippleDuration,
+    final Duration? rippleIdleAfter,
+  }) =>
+      AnimarkerControllerDescription(
+        onRippleAnimation: onRippleAnimation ?? this.onRippleAnimation,
+        onMarkerAnimation: onMarkerAnimation ?? this.onMarkerAnimation,
+        onStopover: onStopover ?? this.onStopover,
+        vsync: vsync ?? this.vsync,
+        useRotation: useRotation ?? this.useRotation,
+        angleThreshold: angleThreshold ?? this.angleThreshold,
+        runExpressAfter: runExpressAfter ?? this.runExpressAfter,
+        isActiveTrip: isActiveTrip ?? this.isActiveTrip,
+        rippleColor: rippleColor ?? this.rippleColor,
+        rippleRadius: rippleRadius ?? this.rippleRadius,
+        curve: curve ?? this.curve,
+        duration: duration ?? this.duration,
+        rippleDuration: rippleDuration ?? this.rippleDuration,
+        rippleIdleAfter: rippleIdleAfter ?? this.rippleIdleAfter,
+      );
+
   factory AnimarkerControllerDescription.animarker(
     Animarker animarker, {
     required TickerProvider vsync,

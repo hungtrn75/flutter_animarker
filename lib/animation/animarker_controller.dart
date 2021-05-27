@@ -15,7 +15,7 @@ import '../helpers/extensions.dart';
 
 class AnimarkerController extends IAnimarkerController {
   @override
-  final AnimarkerControllerDescription description;
+  AnimarkerControllerDescription description;
   //Late Final Variables
   late final Map<MarkerId, IAnilocationTask> tracker;
 
@@ -43,6 +43,13 @@ class AnimarkerController extends IAnimarkerController {
   @override
   void updateUseRotation(bool useRotation) {
     _useRotation = useRotation;
+  }
+
+  @override
+  void updateDuration(Duration duration) {
+    description = description.copyWith(
+      duration: duration,
+    );
   }
 
   @override
