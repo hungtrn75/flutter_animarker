@@ -17,7 +17,7 @@ abstract class IAnimarkerController extends ILocationObservable {
 
   void updateUseRotation(bool useRotation);
 
-  void updateDuration(Duration duration);
+  void updateDuration(Marker marker, Duration duration);
 
   void dispose();
 }

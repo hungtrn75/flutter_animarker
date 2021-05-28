@@ -46,16 +46,15 @@ class AnimarkerController extends IAnimarkerController {
   }
 
   @override
-  void updateDuration(Duration duration) {
-    description = description.copyWith(
-      duration: duration,
-    );
+  void updateDuration(Marker marker, Duration duration) {
+    var task = tracker[marker.markerId]!;
+    task.updateDuration(duration);
   }
 
   @override
   Future<void> pushMarker(Marker marker) async {
     if (!_isActiveTrip) return;
-
+    print(description);
     // Animation Marker Manager Factory
     tracker[marker.markerId] ??= IAnilocationTask.create(
       description: AnilocationTaskDescription.animarker(

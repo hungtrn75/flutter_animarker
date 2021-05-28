@@ -26,6 +26,8 @@ abstract class IAnilocationTask {
 
   void updateRadius(double latLng);
 
+  void updateDuration(Duration duration);
+
   void dispose();
 
   void updateActiveTrip(bool isActiveTrip);

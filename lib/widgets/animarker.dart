@@ -363,7 +363,9 @@ class AnimarkerState extends State<Animarker> with TickerProviderStateMixin {
     }
 
     if (widget.useDurationHasChanged(oldWidget)) {
-      _controller.updateDuration(widget.duration);
+      widget.markers.forEach((marker) async {
+        _controller.updateDuration(marker, widget.duration);
+      });
     }
 
     if (widget.radiusOrZoomHasChanged(oldWidget) && midPoint.isNotEmpty) {
